@@ -1,0 +1,31 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model User {
+  id            String        @id @default(cuid())
+  name          String?
+  email         String        @unique
+  passwordHash  String
+  balance       Float         @default(0.0) // Store in USD or Crypto equivalent
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+  transactions  Transaction[]
+}
+
+model Transaction {
+  id              String   @id @default(cuid())
+  userId          String
+  user            User     @relation(fields: [userId], references: [id])
+  cryptomusUuid   String   @unique // The UUID from Cryptomus checkout
+  amountUsd       Float
+  currency        String   // e.g. USDT, BTC
+  status          String   // e.g. PENDING, PAID, FAILED
+  createdAt       DateTime @default(now())
+}

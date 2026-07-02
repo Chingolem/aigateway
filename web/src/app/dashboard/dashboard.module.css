@@ -1,0 +1,229 @@
+/* ── Shell ── */
+.shell {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Ambient orbs */
+.ambientOrb1 {
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  top: -100px;
+  left: 200px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.1) 0%, transparent 65%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ambientOrb2 {
+  position: fixed;
+  width: 400px;
+  height: 400px;
+  bottom: -100px;
+  right: 100px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, transparent 65%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Sidebar ── */
+.sidebar {
+  width: 240px;
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.02);
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 50;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.sidebarTop {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  text-decoration: none;
+  padding: 0.25rem 0.5rem;
+}
+
+.logoIcon {
+  font-size: 1rem;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.logoSub {
+  color: var(--text-sub);
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+/* ── Side Nav ── */
+.sideNav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.sideNavItem {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.7rem 0.85rem;
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  overflow: hidden;
+}
+
+.sideNavItem:hover {
+  background: var(--surface-color-light);
+  color: var(--text-main);
+}
+
+.sideNavItemActive {
+  background: rgba(124, 58, 237, 0.12);
+  color: var(--text-main);
+  border: 1px solid rgba(124, 58, 237, 0.2);
+}
+
+.sideNavIcon {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.activeIndicator {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 60%;
+  border-radius: 2px 0 0 2px;
+  background: var(--accent-gradient);
+}
+
+/* ── Sidebar Bottom ── */
+.sidebarBottom {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.backLink {
+  font-size: 0.825rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  padding: 0.5rem;
+  border-radius: var(--radius-sm);
+  transition: color var(--transition-fast);
+}
+
+.backLink:hover {
+  color: var(--text-main);
+}
+
+.langBtn {
+  padding: 0.45rem 0.75rem;
+  border-radius: var(--radius-sm);
+  background: var(--surface-color);
+  border: 1px solid var(--surface-border);
+  color: var(--text-sub);
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-align: left;
+}
+
+.langBtn:hover {
+  background: var(--surface-color-light);
+  border-color: var(--surface-border-hover);
+  color: var(--text-main);
+}
+
+/* ── Main ── */
+.main {
+  margin-left: 240px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Topbar ── */
+.topbar {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  background: rgba(5, 5, 8, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
+
+.topbarLeft {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.topbarRight {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.topbarLink {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.topbarLink:hover {
+  color: var(--text-main);
+}
+
+/* ── Content ── */
+.content {
+  flex: 1;
+  padding: 2.5rem 2rem;
+  max-width: 1100px;
+  width: 100%;
+}
