@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { LanguageProvider } from "./LanguageContext";
 
 export const metadata: Metadata = {
-  title: "aigateway | AI API Router",
-  description: "One key for all AI models. Route Claude, GPT, Gemini and more through localhost.",
+  title: "Naipigo | AI Gateway",
+  description: "One API key for fable-5. Connect any OpenAI-compatible client.",
 };
 
 export default function RootLayout({
@@ -15,9 +14,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <LanguageProvider>
-          {children}
-        </LanguageProvider>
+        {children}
       </body>
     </html>
   );
