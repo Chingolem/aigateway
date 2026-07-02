@@ -27,6 +27,7 @@ services:
       - DATABASE_URL=postgresql://litellm:litellm_password@db:5432/litellm_db
       - LITELLM_MASTER_KEY=sk-master-key-for-gateway
       - STORE_MODEL_IN_DB=True
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
     command: [ "--config", "/app/config.yaml" ]
     depends_on:
       db:
