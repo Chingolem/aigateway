@@ -29,8 +29,7 @@ export default function DashboardLayout({
         <div className={styles.sidebarTop}>
           <Link href="/" className={styles.logo}>
             <span className={styles.logoIcon}>✦</span>
-            <span className="text-gradient">Aurora</span>
-            <span className={styles.logoSub}>AI</span>
+            <span className="text-gradient">aigateway</span>
           </Link>
 
           <nav className={styles.sideNav}>

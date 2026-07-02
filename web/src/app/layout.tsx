@@ -3,8 +3,8 @@ import "./globals.css";
 import { LanguageProvider } from "./LanguageContext";
 
 export const metadata: Metadata = {
-  title: "Aurora AI | Premium AI API",
-  description: "Access top-tier AI models through a single API.",
+  title: "aigateway | AI API Router",
+  description: "One key for all AI models. Route Claude, GPT, Gemini and more through localhost.",
 };
 
 export default function RootLayout({

@@ -59,7 +59,7 @@ export default function DashboardPage() {
             🔍 {t('Check API Key', 'Проверить API-ключ')}
           </h2>
           <p className={styles.checkCardSub}>
-            {t('Enter your Aurora key to see usage statistics', 'Введите свой Aurora-ключ для просмотра статистики')}
+            {t('Enter your aigateway key to see usage statistics', 'Введите свой aigateway-ключ для просмотра статистики')}
           </p>
         </div>
 
@@ -71,7 +71,7 @@ export default function DashboardPage() {
               value={apiKey}
               onChange={e => setApiKey(e.target.value)}
               onKeyDown={e => e.key === 'Enter' && handleCheck()}
-              placeholder={t('your-aurora-key-here', 'ваш-aurora-ключ')}
+              placeholder={t('your-aigateway-key-here', 'ваш-aigateway-ключ')}
               className={styles.input}
               spellCheck={false}
             />

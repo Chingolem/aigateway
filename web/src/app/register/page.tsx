@@ -10,8 +10,7 @@ export default function Register() {
           <div className={styles.cardHeader}>
             <Link href="/" className={styles.logoArea}>
               <span className={styles.logoIcon}>✦</span>
-              <span className="text-gradient">Aurora</span>
-              <span className={styles.logoSub}>AI</span>
+              <span className="text-gradient">aigateway</span>
             </Link>
             <h1 className={styles.title}>Create account</h1>
             <p className={styles.subtitle}>Start routing AI requests in seconds</p>

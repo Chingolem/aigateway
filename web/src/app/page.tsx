@@ -100,8 +100,7 @@ export default function Home() {
         <div className={styles.navInner}>
           <Link href="/" className={styles.logo}>
             <span className={styles.logoIcon}>✦</span>
-            <span className="text-gradient">Aurora</span>
-            <span className={styles.logoSub}>AI</span>
+            <span className="text-gradient">aigateway</span>
           </Link>
 
           <div className={styles.navLinks}>
@@ -177,8 +176,8 @@ export default function Home() {
             </div>
             <pre className={styles.codeBlock}>
               <span className={styles.codeComment}># {t('Works with any OpenAI SDK', 'Работает с любым OpenAI SDK')}</span>{'\n'}
-              <span className={styles.codeKey}>export</span> OPENAI_BASE_URL=<span className={styles.codeStr}>&quot;https://gateway.aurora-ai.io/v1&quot;</span>{'\n'}
-              <span className={styles.codeKey}>export</span> OPENAI_API_KEY=<span className={styles.codeStr}>&quot;sk-aurora-...&quot;</span>{'\n\n'}
+              <span className={styles.codeKey}>export</span> OPENAI_BASE_URL=<span className={styles.codeStr}>&quot;http://localhost:4000/v1&quot;</span>{'\n'}
+              <span className={styles.codeKey}>export</span> OPENAI_API_KEY=<span className={styles.codeStr}>&quot;sk-aigateway-...&quot;</span>{'\n\n'}
               <span className={styles.codeComment}># {t('Now call any model', 'Теперь вызови любую модель')}</span>{'\n'}
               openai chat <span className={styles.codeArg}>-m claude-opus-4</span> <span className={styles.codeStr}>&quot;Hello!&quot;</span>{'\n'}
               <span className={styles.codeSuccess}>✓ Routed → Anthropic Claude Opus 4</span>
@@ -261,7 +260,7 @@ export default function Home() {
         <div className="container">
           <div className={styles.footerInner}>
             <div className={styles.footerLogo}>
-              <span className="text-gradient">Aurora AI</span>
+              <span className="text-gradient">aigateway</span>
               <span className={styles.footerTagline}>{t('The AI API Router', 'AI API Роутер')}</span>
             </div>
             <div className={styles.footerLinks}>
@@ -269,7 +268,7 @@ export default function Home() {
               <Link href="/login" className={styles.footerLink}>{t('Login', 'Войти')}</Link>
               <Link href="/register" className={styles.footerLink}>{t('Register', 'Регистрация')}</Link>
             </div>
-            <p className={styles.footerCopy}>© 2026 Aurora AI. All rights reserved.</p>
+            <p className={styles.footerCopy}>© 2026 aigateway. All rights reserved.</p>
           </div>
         </div>
       </footer>
