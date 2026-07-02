@@ -4,7 +4,7 @@ import { useLanguage } from '../LanguageContext';
 import { useState } from 'react';
 import styles from './page.module.css';
 
-const LITELLM_URL = process.env.NEXT_PUBLIC_LITELLM_URL || 'http://localhost:4000';
+const LITELLM_URL = process.env.NEXT_PUBLIC_LITELLM_URL ?? null;
 
 const MOCK_STATS = [
   { labelEn: 'Total Requests', labelRu: 'Всего запросов', value: '—', icon: '📈' },
@@ -99,19 +99,28 @@ export default function DashboardPage() {
         )}
       </div>
 
-      {/* Admin panel info */}
       <div className={`${styles.infoCard} glass-panel`}>
         <div className={styles.infoCardIcon}>🛠</div>
         <div>
           <h3 className={styles.infoCardTitle}>{t('LiteLLM Admin Panel', 'LiteLLM Админ-панель')}</h3>
           <p className={styles.infoCardText}>
-            {t('Available at', 'Доступна по адресу')}{' '}
-            <a href={`${LITELLM_URL}/ui`} target="_blank" rel="noopener noreferrer" className={styles.infoLink}>
-              {LITELLM_URL}/ui
-            </a>
-            {' · '}
-            {t('Password:', 'Пароль:')}{' '}
-            <code>sk-master-key-for-gateway</code>
+            {LITELLM_URL ? (
+              <>
+                {t('Available at', 'Доступна по адресу')}{' '}
+                <a href={`${LITELLM_URL}/ui`} target="_blank" rel="noopener noreferrer" className={styles.infoLink}>
+                  {LITELLM_URL}/ui
+                </a>
+                {' · '}
+                {t('Password:', 'Пароль:')}{' '}
+                <code>sk-master-key-for-gateway</code>
+              </>
+            ) : (
+              <>
+                {t('Set ', 'Укажи ')}
+                <code>NEXT_PUBLIC_LITELLM_URL</code>
+                {t(' in Vercel environment variables to link your LiteLLM deployment.', ' в переменных среды Vercel, чтобы привязать LiteLLM.')}
+              </>
+            )}
           </p>
         </div>
       </div>

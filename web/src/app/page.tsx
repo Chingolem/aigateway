@@ -176,7 +176,7 @@ export default function Home() {
             </div>
             <pre className={styles.codeBlock}>
               <span className={styles.codeComment}># {t('Works with any OpenAI SDK', 'Работает с любым OpenAI SDK')}</span>{'\n'}
-              <span className={styles.codeKey}>export</span> OPENAI_BASE_URL=<span className={styles.codeStr}>&quot;http://localhost:4000/v1&quot;</span>{'\n'}
+              <span className={styles.codeKey}>export</span> OPENAI_BASE_URL=<span className={styles.codeStr}>&quot;https://your-litellm.railway.app/v1&quot;</span>{'\n'}
               <span className={styles.codeKey}>export</span> OPENAI_API_KEY=<span className={styles.codeStr}>&quot;sk-aigateway-...&quot;</span>{'\n\n'}
               <span className={styles.codeComment}># {t('Now call any model', 'Теперь вызови любую модель')}</span>{'\n'}
               openai chat <span className={styles.codeArg}>-m claude-opus-4</span> <span className={styles.codeStr}>&quot;Hello!&quot;</span>{'\n'}
