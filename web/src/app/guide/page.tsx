@@ -144,7 +144,7 @@ client = openai.OpenAI(
 )
 
 response = client.chat.completions.create(
-    model="gpt-3.5-turbo",
+    model="fable-5",
     messages=[{"role": "user", "content": "Hello!"}],
 )
 print(response.choices[0].message.content)`}</pre>
@@ -159,7 +159,7 @@ const client = new OpenAI({
 });
 
 const res = await client.chat.completions.create({
-  model: "gpt-3.5-turbo",
+  model: "fable-5",
   messages: [{ role: "user", content: "Hello!" }],
 });
 console.log(res.choices[0].message.content);`}</pre>
@@ -175,7 +175,7 @@ console.log(res.choices[0].message.content);`}</pre>
   -H "Content-Type: application/json" \\
   -H "Authorization: Bearer sk-aigateway-..." \\
   -d '{
-    "model": "gpt-3.5-turbo",
+    "model": "fable-5",
     "messages": [
       {"role": "user", "content": "Hello!"}
     ]
@@ -200,7 +200,7 @@ console.log(res.choices[0].message.content);`}</pre>
             </p>
             <div className={styles.modelTable}>
               {[
-                { model: 'gpt-3.5-turbo', provider: 'OpenAI' },
+                { model: 'fable-5', provider: 'aigateway' },
               ].map((m, i) => (
                 <div key={i} className={styles.modelRow}>
                   <code className={styles.modelName}>{m.model}</code>

@@ -1,8 +1,8 @@
 model_list:
-  - model_name: gpt-3.5-turbo
+  - model_name: fable-5
     litellm_params:
-      model: openai/gpt-3.5-turbo
-      api_key: "os.environ/OPENAI_API_KEY"
+      model: anthropic/claude-3-5-sonnet-20241022
+      api_key: "os.environ/ANTHROPIC_API_KEY"
 
 general_settings:
   master_key: "sk-master-key-for-gateway"
