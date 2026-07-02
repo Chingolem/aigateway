@@ -4,6 +4,8 @@ import { useLanguage } from '../LanguageContext';
 import { useState } from 'react';
 import styles from './page.module.css';
 
+const LITELLM_URL = process.env.NEXT_PUBLIC_LITELLM_URL || 'http://localhost:4000';
+
 const MOCK_STATS = [
   { labelEn: 'Total Requests', labelRu: 'Всего запросов', value: '—', icon: '📈' },
   { labelEn: 'Tokens Used', labelRu: 'Токенов потрачено', value: '—', icon: '🔢' },
@@ -104,8 +106,8 @@ export default function DashboardPage() {
           <h3 className={styles.infoCardTitle}>{t('LiteLLM Admin Panel', 'LiteLLM Админ-панель')}</h3>
           <p className={styles.infoCardText}>
             {t('Available at', 'Доступна по адресу')}{' '}
-            <a href="http://localhost:4000" target="_blank" rel="noopener noreferrer" className={styles.infoLink}>
-              http://localhost:4000
+            <a href={`${LITELLM_URL}/ui`} target="_blank" rel="noopener noreferrer" className={styles.infoLink}>
+              {LITELLM_URL}/ui
             </a>
             {' · '}
             {t('Password:', 'Пароль:')}{' '}
